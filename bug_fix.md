@@ -18,3 +18,21 @@ sudo apt update
 sudo apt install code
 
 ```
+
+### 腾讯会议ubuntn不兼容wayland协议报错
+
+```bash
+sudo vi /opt/wemeet/wemeetapp.sh
+```
+
+
+在if [ "$XDG_SESSION_TYPE" = "wayland" ]前面加上：
+
+
+```bash
+export XDG_SESSION_TYPE=x11
+
+export QT_QPA_PLATFORM=xcb
+
+unset WAYLAND_DISPLAYCOPY
+```

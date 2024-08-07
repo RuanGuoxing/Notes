@@ -1,5 +1,31 @@
 # Linux
 
+## jetson orin
+
+### io控制
+
+```bash
+# 配置io引脚功能
+sudo /opt/nvidia/jetson-io/jetson-io.py
+
+sudo apt-get install python3-pip
+git clone https://github.com/NVIDIA/jetson-gpio
+sudo mv jetson-gpio /opt/nvidia/
+cd /opt/nvidia/jetson-gpio
+sudo python3 setup.py installWS
+
+# 添加组
+sudo groupadd -f -r gpio
+sudo usermod -a -G gpio jetson
+
+
+
+sudo cp /opt/nvidia/jetson-gpio/lib/python/Jetson/GPIO/99-gpio.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules && sudo udevadm trigger
+
+
+```
+
 ## 网络
 
 ### Proxy
