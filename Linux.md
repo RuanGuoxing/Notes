@@ -34,7 +34,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 ```bash
 
-sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
+sudo vim /etc/apt/apt.conf
 
 # Add proxy
 Acquire::http::Proxy "http://localhost:7890";
