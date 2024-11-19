@@ -61,3 +61,9 @@ sudo systemctl restart docker
 
 docker pull 
 ```
+
+## Vim Tricks
+
+### increment number per line
+
+C-v, and move cursor to choose number, then g, C-a
